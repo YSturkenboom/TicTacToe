@@ -1,6 +1,6 @@
 # TicTacToe v2.0
 
-![Screenie](/screenie.png)
+![Screenie](/doc/screenie.png)
 
 ## "It's tic-tac-toe, but everything is an explosion"
 
