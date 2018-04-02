@@ -154,6 +154,32 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     break;
             }
+
+            if (game.getAI()){
+                int[] pos = game.makeAIMove();
+                row = pos[0]-1;
+                col = pos[1]-1;
+
+                //defaults to first button
+                int bid = R.id.b1;
+                if (row == 0){
+                    if (col == 0) bid = R.id.b1;
+                    if (col == 1) bid = R.id.b2;
+                    if (col == 2) bid = R.id.b3;
+                }
+                if (row == 1){
+                    if (col == 0) bid = R.id.b4;
+                    if (col == 1) bid = R.id.b5;
+                    if (col == 2) bid = R.id.b6;
+                }
+                if (row == 2){
+                    if (col == 0) bid = R.id.b7;
+                    if (col == 1) bid = R.id.b8;
+                    if (col == 2) bid = R.id.b9;
+                }
+
+                drawTile(Tile.CROSS, findViewById(bid));
+            }
         }
 
         else {

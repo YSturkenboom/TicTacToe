@@ -14,6 +14,7 @@ public class Game implements Serializable {
     private int movesPlayed;
     private Boolean gameOver;
     private GameState gameState;
+    private Boolean AI;
 
     public Game() {
         board = new Tile[BOARD_SIZE][BOARD_SIZE];
@@ -25,6 +26,7 @@ public class Game implements Serializable {
         gameOver = false;
         movesPlayed = 0;
         gameState = GameState.IN_PROGRESS;
+        AI = true;
     }
 
     public Tile draw(int row, int column) {
@@ -80,10 +82,6 @@ public class Game implements Serializable {
     }
 
     private Boolean detectRowWin(int row){
-        System.out.println(board[row][0]);
-        System.out.println(board[row][1]);
-        System.out.println(board[row][2]);
-        System.out.println(board[row][0] == board[row][1]);
         return (board[row][0] == board[row][1] &&
                 board[row][1] == board[row][2]) &&
                 (board[row][0] == Tile.CIRCLE ||
@@ -110,5 +108,25 @@ public class Game implements Serializable {
 
     public GameState getGameState() {
         return gameState;
+    }
+
+    public Boolean getAI(){
+        return AI;
+    }
+
+    public int[] makeAIMove() {
+        System.out.println("ai");
+        for (int i = 1; i < BOARD_SIZE+1; i++) {
+            for (int j = 1; j < BOARD_SIZE+1; j++) {
+                if (getTileAt(i, j) == Tile.BLANK) {
+                    draw(i-1,j-1);
+                    int[] pos = new int[2];
+                    pos[0] = i;
+                    pos[1] = j;
+                    return pos;
+                }
+            }
+        }
+        return null;
     }
 }
