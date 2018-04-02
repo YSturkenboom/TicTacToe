@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/dynamite"
     tools:context="com.ananasco.tictactoe.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
     <GridLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_vertical|center"
         android:rowCount="3"
         android:columnCount="3"
         android:layout_weight="1">
@@ -19,53 +32,56 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b1" />
+            android:id="@+id/b1"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b2"/>
+            android:id="@+id/b2"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b3"/>
+            android:id="@+id/b3"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b4"/>
+            android:id="@+id/b4"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b5"/>
+            android:id="@+id/b5"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b6"/>
+            android:id="@+id/b6"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b7"/>
+            android:id="@+id/b7"
+            android:alpha="0.6"/>
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b8"/>
+            android:id="@+id/b8"
+            android:alpha="0.6"
+            />
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b9"/>
+            android:id="@+id/b9"
+            android:alpha="0.6"/>
     </GridLayout>
-
-    <Button
-        android:text="reset"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="resetClicked"/>
 </LinearLayout>
