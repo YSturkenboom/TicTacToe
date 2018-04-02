@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        game = new Game();
+        game = new Game(true);
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -37,9 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.resetAction) {
-           resetClicked();
-            return true;
+        switch (item.getItemId()) {
+            case R.id.resetAction:
+                resetClicked();
+                return true;
+            case R.id.resetAIAction:
+                System.out.println("ai");
+                resetAIClicked();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -155,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            if (game.getAI()){
+            if (game.getAI() && game.getGameState() != GameState.DRAW
+                    && result_tile != Tile.INVALID){
                 int[] pos = game.makeAIMove();
                 row = pos[0]-1;
                 col = pos[1]-1;
@@ -190,7 +196,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetClicked() {
-        game = new Game();
+        game = new Game(false);
+        drawTile(Tile.BLANK, findViewById(R.id.b1));
+        drawTile(Tile.BLANK, findViewById(R.id.b2));
+        drawTile(Tile.BLANK, findViewById(R.id.b3));
+        drawTile(Tile.BLANK, findViewById(R.id.b4));
+        drawTile(Tile.BLANK, findViewById(R.id.b5));
+        drawTile(Tile.BLANK, findViewById(R.id.b6));
+        drawTile(Tile.BLANK, findViewById(R.id.b7));
+        drawTile(Tile.BLANK, findViewById(R.id.b8));
+        drawTile(Tile.BLANK, findViewById(R.id.b9));
+
+    }
+
+    public void resetAIClicked() {
+        game = new Game(true);
         drawTile(Tile.BLANK, findViewById(R.id.b1));
         drawTile(Tile.BLANK, findViewById(R.id.b2));
         drawTile(Tile.BLANK, findViewById(R.id.b3));

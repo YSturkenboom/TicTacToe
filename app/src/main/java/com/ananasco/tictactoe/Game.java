@@ -16,7 +16,7 @@ public class Game implements Serializable {
     private GameState gameState;
     private Boolean AI;
 
-    public Game() {
+    public Game(Boolean aiEnabled) {
         board = new Tile[BOARD_SIZE][BOARD_SIZE];
         for(int i=0; i<BOARD_SIZE; i++)
             for(int j=0; j<BOARD_SIZE; j++)
@@ -26,7 +26,7 @@ public class Game implements Serializable {
         gameOver = false;
         movesPlayed = 0;
         gameState = GameState.IN_PROGRESS;
-        AI = true;
+        AI = aiEnabled;
     }
 
     public Tile draw(int row, int column) {
@@ -115,7 +115,6 @@ public class Game implements Serializable {
     }
 
     public int[] makeAIMove() {
-        System.out.println("ai");
         for (int i = 1; i < BOARD_SIZE+1; i++) {
             for (int j = 1; j < BOARD_SIZE+1; j++) {
                 if (getTileAt(i, j) == Tile.BLANK) {
