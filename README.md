@@ -1,5 +1,7 @@
 # TicTacToe v2.0
 
+![Screenie](/screenie.png)
+
 ## "It's tic-tac-toe, but everything is an explosion"
 
 Everyone knows tic-tac-toe. And honestly it's a bit boring. You know what isn't boring? Explosions.
