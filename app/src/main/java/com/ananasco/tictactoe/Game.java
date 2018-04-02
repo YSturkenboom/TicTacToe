@@ -16,6 +16,8 @@ public class Game implements Serializable {
     private GameState gameState;
     private Boolean AI;
 
+    // I adapted the constructor so that the user may choose between an AI
+    // and a 1v1 game
     public Game(Boolean aiEnabled) {
         board = new Tile[BOARD_SIZE][BOARD_SIZE];
         for(int i=0; i<BOARD_SIZE; i++)
@@ -29,6 +31,7 @@ public class Game implements Serializable {
         AI = aiEnabled;
     }
 
+    // This is the game logic part of drawing a circle or a cross.
     public Tile draw(int row, int column) {
         Tile currentState = board[row][column];
 
@@ -60,6 +63,9 @@ public class Game implements Serializable {
                 detectColWin(1)|| detectColWin(2) ||
                 detectDiagWin()) {
             gameOver = true;
+
+            // The turn flips after each draw, so the winner is
+            // the person whose turn it is -not-
             if (playerOneTurn) {
                 gameState = GameState.PLAYER_TWO;
             }
@@ -74,6 +80,7 @@ public class Game implements Serializable {
         }
     }
 
+    // helper function to detect win conditions
     private Boolean detectColWin(int col){
         return (board[0][col] == board[1][col] &&
                 board[1][col] == board[2][col]) &&
@@ -81,6 +88,7 @@ public class Game implements Serializable {
                 board[0][col] == Tile.CROSS);
     }
 
+    // helper function to detect win conditions
     private Boolean detectRowWin(int row){
         return (board[row][0] == board[row][1] &&
                 board[row][1] == board[row][2]) &&
@@ -88,6 +96,7 @@ public class Game implements Serializable {
                 board[row][0] == Tile.CROSS);
     }
 
+    // helper function to detect win conditions
     private Boolean detectDiagWin(){
         //first diagonal
         return ((board[0][0] == board[1][1] &&
@@ -102,18 +111,26 @@ public class Game implements Serializable {
                         board[2][0] == Tile.CROSS));
     }
 
+    // returns the Tile on the board for a given row and column
     public Tile getTileAt(int row, int column) {
         return board[row-1][column-1];
     }
 
+    // public getter function for the GameState
     public GameState getGameState() {
         return gameState;
     }
 
+    // public getter function for whether AI is enabled
     public Boolean getAI(){
         return AI;
     }
 
+    // This function simulates an "AI move". (right now
+    // it just chooses the first empty square it sees)
+    // I return the position in a rather hacky way with an
+    // array instead of an object because I forgot for a
+    // second that Java doesn't allow multiple return values
     public int[] makeAIMove() {
         for (int i = 1; i < BOARD_SIZE+1; i++) {
             for (int j = 1; j < BOARD_SIZE+1; j++) {
@@ -126,6 +143,8 @@ public class Game implements Serializable {
                 }
             }
         }
+
+        // this should never be reached, but we need a default return value
         return null;
     }
 }

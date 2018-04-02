@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     Game game;
 
+    // By default, the AI is on. Added code sets up the custom Action Bar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
     }
 
+    // Necessary to inflate the custom menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // This overridden function handles Action Bar Item selection.
+    // The two different buttons start the game in AI or in 1v1 mode.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -49,12 +53,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // The game state is saved to make games persistent over
+    // minimizing the app or rotating the screen
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable("game", game);
     }
 
+    // Restores the game state when the application life cycle calls this function
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         drawBoard();
     }
 
+    // Helper function that uses drawTile(Tile, View) to draw the whole board.
+    // Used in onRestoreInstanceState.
     public void drawBoard(){
         drawTile(game.getTileAt(1,1), findViewById(R.id.b1));
         drawTile(game.getTileAt(1,2), findViewById(R.id.b2));
@@ -74,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         drawTile(game.getTileAt(3,3), findViewById(R.id.b9));
     }
 
+    // Given a Tile and a View (an ImageButton) this function updates graphical
+    // representation of the buttons (explosions!)
     public void drawTile(Tile tile, View buttonView){
         switch(tile) {
             case CROSS:
@@ -91,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // This function is called when a tile is tapped and finds the corresponding
+    // row and column, and calls game.draw() to update the board, and drawTile() to
+    // update the UI.
+    // It also checks for game over, and performs the AI move after each user move,
+    // if AI is enabled.
     public void tileClicked(View view) {
 
         if (game.getGameState() == GameState.IN_PROGRESS) {
@@ -141,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
             Tile result_tile = game.draw(row - 1, col - 1);
             drawTile(result_tile, view);
 
+            // User interaction is done via Toasts
             game.detectGameOver();
             switch (game.getGameState()) {
                 case DRAW:
@@ -160,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
+            // The AI may only move if enabled, the game is not a draw and the last move
+            // wasn't invalid.
             if (game.getAI() && game.getGameState() != GameState.DRAW
                     && result_tile != Tile.INVALID){
                 int[] pos = game.makeAIMove();
@@ -195,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // This function is called when the reset button is pressed, and wipes the board
+    // The game is then reset with AI -disabled-
     public void resetClicked() {
         game = new Game(false);
         drawTile(Tile.BLANK, findViewById(R.id.b1));
@@ -209,6 +230,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // This function is called when the reset button is pressed, and wipes the board
+    // The game is then reset with AI -enabled-
     public void resetAIClicked() {
         game = new Game(true);
         drawTile(Tile.BLANK, findViewById(R.id.b1));
