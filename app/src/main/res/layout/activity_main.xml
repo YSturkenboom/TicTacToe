@@ -15,47 +15,47 @@
         android:columnCount="3"
         android:layout_weight="1">
 
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
-            android:id="@+id/b1"/>
-        <Button
+            android:id="@+id/b1" />
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b2"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b3"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b4"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b5"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b6"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b7"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"
             android:id="@+id/b8"/>
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="tileClicked"

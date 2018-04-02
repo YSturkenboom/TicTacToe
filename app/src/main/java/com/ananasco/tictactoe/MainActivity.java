@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import static com.ananasco.tictactoe.Tile.BLANK;
@@ -49,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
     public void drawTile(Tile tile, View buttonView){
         switch(tile) {
             case CROSS:
-                ((Button)buttonView).setText("X");
+                ((ImageButton)buttonView).setImageResource(R.drawable.boom1);
                 break;
             case CIRCLE:
-                ((Button)buttonView).setText("O");
+                ((ImageButton)buttonView).setImageResource(R.drawable.boom2);
                 break;
             case INVALID:
                 Toast.makeText(getApplicationContext(), "Invalid move!", Toast.LENGTH_SHORT).show();
                 break;
             case BLANK:
-                ((Button)buttonView).setText("");
+                ((ImageButton)buttonView).setImageResource(android.R.color.transparent);
                 break;
         }
     }
