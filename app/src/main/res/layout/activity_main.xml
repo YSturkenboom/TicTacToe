@@ -17,36 +17,55 @@
 
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b1"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b2"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b3"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b4"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b5"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b6"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b7"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b8"/>
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"/>
-
+            android:layout_height="100dp"
+            android:onClick="tileClicked"
+            android:id="@+id/b9"/>
     </GridLayout>
 
     <Button
+        android:text="reset"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:onClick="resetClicked"/>
 </LinearLayout>
