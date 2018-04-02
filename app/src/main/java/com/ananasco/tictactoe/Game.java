@@ -126,11 +126,17 @@ public class Game implements Serializable {
         return AI;
     }
 
-    // This function simulates an "AI move". (right now
-    // it just chooses the first empty square it sees)
-    // I return the position in a rather hacky way with an
-    // array instead of an object because I forgot for a
-    // second that Java doesn't allow multiple return values
+    /* This function simulates an "AI move". (right now
+     * it just chooses the first empty square it sees)
+     *
+     * I wanted to implement the smart strategy that always
+     * wins, but I think that time may be better spent on
+     * the next apps.
+     *
+     * I return the position in a rather hacky way with an
+     * array instead of an object because I forgot for a
+     * second that Java doesn't allow multiple return values.
+     */
     public int[] makeAIMove() {
         for (int i = 1; i < BOARD_SIZE+1; i++) {
             for (int j = 1; j < BOARD_SIZE+1; j++) {
