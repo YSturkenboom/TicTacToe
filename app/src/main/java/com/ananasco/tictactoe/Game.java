@@ -75,7 +75,7 @@ public class Game implements Serializable {
         }
 
         // then, check for a draw
-        if (movesPlayed == 9){
+        else if (movesPlayed == 9){
             gameState = GameState.DRAW;
         }
     }

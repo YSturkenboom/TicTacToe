@@ -180,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
             // The AI may only move if enabled, the game is not a draw and the last move
             // wasn't invalid.
             if (game.getAI() && game.getGameState() != GameState.DRAW
+                    && game.getGameState() != GameState.PLAYER_ONE
+                    && game.getGameState() != GameState.PLAYER_TWO
                     && result_tile != Tile.INVALID){
                 int[] pos = game.makeAIMove();
                 row = pos[0]-1;
