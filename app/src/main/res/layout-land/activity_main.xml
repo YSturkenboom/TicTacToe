@@ -29,8 +29,8 @@
         android:layout_weight="1">
 
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b1"
             android:alpha="0.6"
@@ -38,8 +38,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b2"
             android:alpha="0.6"
@@ -47,8 +47,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b3"
             android:alpha="0.6"
@@ -56,8 +56,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b4"
             android:alpha="0.6"
@@ -65,8 +65,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b5"
             android:alpha="0.6"
@@ -74,8 +74,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b6"
             android:alpha="0.6"
@@ -83,8 +83,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b7"
             android:alpha="0.6"
@@ -92,8 +92,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b8"
             android:alpha="0.6"
@@ -101,8 +101,8 @@
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:onClick="tileClicked"
             android:id="@+id/b9"
             android:alpha="0.6"
