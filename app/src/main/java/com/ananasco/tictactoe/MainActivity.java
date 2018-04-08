@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Invalid move!", Toast.LENGTH_SHORT).show();
                 break;
             case BLANK:
-                ((ImageButton)buttonView).setImageResource(android.R.color.transparent);
+                ((ImageButton)buttonView).setImageResource(android.R.color.darker_gray);
                 break;
         }
     }
